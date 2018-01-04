@@ -1,0 +1,66 @@
+@charset "UTF-8";
+/*!
+ * www.notescript.cc -> main.css <- www.nuxtjs.org
+ * Version - 0.0.0
+ *
+ * Copyright (c) 2017 Ed Me(603803799@qq.com)
+ */
+
+* {
+  font-size: .08rem;
+}
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .3s
+}
+
+.page-enter, .page-leave-active {
+  opacity: 0
+}
+
+.bounce-enter-active {
+  animation: bounce-in .8s;
+}
+
+.bounce-leave-active {
+  animation: bounce-out .5s;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0)
+  }
+  50% {
+    transform: scale(1.5)
+  }
+  100% {
+    transform: scale(1)
+  }
+}
+
+@keyframes bounce-out {
+  0% {
+    transform: scale(1)
+  }
+  50% {
+    transform: scale(1.5)
+  }
+  100% {
+    transform: scale(0)
+  }
+}
+
+.slide-left-enter, .slide-right-leave-active {
+  opacity: 0;
+  transform: translate(30px, 0);
+}
+
+.slide-left-leave-active, .slide-right-enter {
+  opacity: 0;
+  transform: translate(-30px, 0);
+}
+
+#__nuxt, .nuxt-progress+* {
+  height: 100%;
+  width: 100%;
+}
