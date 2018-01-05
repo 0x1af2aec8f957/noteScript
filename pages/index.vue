@@ -6,7 +6,11 @@
           <!--LOGO-->
         </div>
         <div class="align-center menu-list">
-          <nuxt-link v-for="x in menu" tag="p" class="cursor-pointer text-center no-select" v-text="x.name" :to="x.link" :key="x.link"><!--目录--></nuxt-link>
+          <nuxt-link v-for="x in menu"
+                     tag="p"
+                     :class="['cursor-pointer', 'text-center', 'no-select', $route.path.includes(x.link)&&'active']"
+                     v-text="x.name" :to="x.link"
+                     :key="x.link"><!--目录--></nuxt-link>
         </div>
       </div>
     </div>
@@ -115,6 +119,15 @@
   .menu-list[class~="align-center"] > * {
     padding: .05rem 0;
     font-size: .12rem;
+    transition: color .25s ease-in-out;
+  }
+
+  .menu-list[class~="align-center"] > *:hover {
+    color: rgba(36, 173, 255, .5)
+  }
+
+  .menu-list[class~="align-center"] > .active {
+    color: rgba(36, 173, 255, 1)
   }
 
   #content-right > * {
@@ -147,9 +160,11 @@
     transition: border .2s ease-in-out;
     line-height: 1.5;
   }
-  .web-title{
-    letter-spacing:.05rem
+
+  .web-title {
+    letter-spacing: .05rem
   }
+
   .search-box {
     box-shadow: none;
     border-left-width: 1px;

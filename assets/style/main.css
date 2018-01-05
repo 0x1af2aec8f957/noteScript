@@ -10,6 +10,16 @@
   font-size: .08rem;
 }
 
+/* latin */
+@font-face {
+  font-family: 'Code';
+  font-style: normal;
+  font-display: block;
+  font-weight: 400;
+  src: local('Droid Sans Mono Regular'), local('DroidSansMono-Regular'), url(https://fonts.gstatic.com/s/droidsansmono/v9/ns-m2xQYezAtqh7ai59hJVlgUn8GogvcKKzoM9Dh-4E.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+
 .page-enter-active, .page-leave-active {
   transition: opacity .3s
 }
@@ -60,7 +70,7 @@
   transform: translate(-30px, 0);
 }
 
-#__nuxt, .nuxt-progress+* {
+#__nuxt, .nuxt-progress + * {
   height: 100%;
   width: 100%;
 }
