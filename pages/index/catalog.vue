@@ -1,6 +1,10 @@
 <template>
   <div id="catalog">
-    <span class="group-list" v-for="x in group" :target="x.tag" v-text="x.title" :style="{fontSize:x.random}"></span>
+    <p class="group-list text-overflow"
+       v-for="x in group"
+       :target="x.tag"
+       v-text="x.title"
+       :style="{fontSize:x.random}"></p>
   </div>
 </template>
 
@@ -17,55 +21,121 @@
           tag: 'JAVASCRIPT',
           random: '0rem'
         }, {
-          title: '你好，世界',
+          title: 'where is ....',
           content: `欢迎来到 ${this.origin}`,
           time: '2018-01-01',
           tag: 'JAVASCRIPT',
           random: '0rem'
         }, {
-          title: '你好，世界',
+          title: '测试 测试',
           content: `欢迎来到 ${this.origin}`,
           time: '2018-01-01',
           tag: 'JAVASCRIPT',
           random: '0rem'
         }, {
-          title: '你好，世界',
+          title: 'js开发技巧js开发技巧js开发技巧js开发技巧js开发技巧js开发技巧js开发技巧js开发技巧js开发技巧',
           content: `欢迎来到 ${this.origin}`,
           time: '2018-01-01',
           tag: 'JAVASCRIPT',
           random: '0rem'
         }, {
-          title: '你好，世界',
+          title: '未来 现在',
           content: `欢迎来到 ${this.origin}`,
           time: '2018-01-01',
           tag: 'JAVASCRIPT',
           random: '0rem'
         }, {
-          title: '你好，世界',
+          title: '中国足球',
           content: `欢迎来到 ${this.origin}`,
           time: '2018-01-01',
           tag: 'JAVASCRIPT',
           random: '0rem'
         }, {
-          title: '你好，世界',
+          title: '犀利的走位',
           content: `欢迎来到 ${this.origin}`,
           time: '2018-01-01',
           tag: 'JAVASCRIPT',
           random: '0rem'
         }, {
-          title: '你好，世界',
+          title: '我们不一样',
           content: `欢迎来到 ${this.origin}`,
           time: '2018-01-01',
           tag: 'JAVASCRIPT',
           random: '0rem'
         }, {
-          title: '你好，世界',
+          title: 'Helloween world',
           content: `欢迎来到 ${this.origin}`,
           time: '2018-01-01',
           tag: 'JAVASCRIPT',
           random: '0rem'
         }, {
-          title: '你好，世界',
+          title: '西部牛仔',
+          content: `欢迎来到 ${this.origin}`,
+          time: '2018-01-01',
+          tag: 'JAVASCRIPT',
+          random: '0rem'
+        }, {
+          title: '西部牛仔',
+          content: `欢迎来到 ${this.origin}`,
+          time: '2018-01-01',
+          tag: 'JAVASCRIPT',
+          random: '0rem'
+        }, {
+          title: '西部牛仔',
+          content: `欢迎来到 ${this.origin}`,
+          time: '2018-01-01',
+          tag: 'JAVASCRIPT',
+          random: '0rem'
+        }, {
+          title: '西部牛仔',
+          content: `欢迎来到 ${this.origin}`,
+          time: '2018-01-01',
+          tag: 'JAVASCRIPT',
+          random: '0rem'
+        }, {
+          title: '西部牛仔',
+          content: `欢迎来到 ${this.origin}`,
+          time: '2018-01-01',
+          tag: 'JAVASCRIPT',
+          random: '0rem'
+        }, {
+          title: '西部牛仔',
+          content: `欢迎来到 ${this.origin}`,
+          time: '2018-01-01',
+          tag: 'JAVASCRIPT',
+          random: '0rem'
+        }, {
+          title: '西部牛仔',
+          content: `欢迎来到 ${this.origin}`,
+          time: '2018-01-01',
+          tag: 'JAVASCRIPT',
+          random: '0rem'
+        }, {
+          title: '西部牛仔',
+          content: `欢迎来到 ${this.origin}`,
+          time: '2018-01-01',
+          tag: 'JAVASCRIPT',
+          random: '0rem'
+        }, {
+          title: '西部牛仔',
+          content: `欢迎来到 ${this.origin}`,
+          time: '2018-01-01',
+          tag: 'JAVASCRIPT',
+          random: '0rem'
+        }, {
+          title: '西部牛仔',
+          content: `欢迎来到 ${this.origin}`,
+          time: '2018-01-01',
+          tag: 'JAVASCRIPT',
+          random: '0rem'
+        }, {
+          title: '西部牛仔',
+          content: `欢迎来到 ${this.origin}`,
+          time: '2018-01-01',
+          tag: 'JAVASCRIPT',
+          random: '0rem'
+        }, {
+          title: '西部牛仔',
           content: `欢迎来到 ${this.origin}`,
           time: '2018-01-01',
           tag: 'JAVASCRIPT',
@@ -93,21 +163,28 @@
 <style scoped>
   #catalog {
     padding: .18rem;
-    white-space:nowrap;
-    word-break:keep-all;
+    /*white-space: nowrap;
+    word-break: keep-all;*/
   }
 
   .group-list {
     color: rgba(25, 118, 210, 1);
     position: relative;
-    margin: .05rem;
     cursor: pointer;
     font-family: Code;
-    background-color: rgba(187, 197, 222, 0.1);
-    border-radius: 2px
+    padding-right: .888em; /*确保看到after[tag/标签]*/
+    margin: .035rem 0;
+    /*background-color: rgba(187, 197, 222, 0.1);*/
+    border-radius: 2px;
+    transition: color .25s ease;
   }
 
-  .group-list::before {
+  .group-list:hover {
+    color: red;
+    padding-right: 5.888em; /*确保看到after[tag/标签]*/
+  }
+
+  .group-list::after {
     content: attr(target);
     position: absolute;
     color: #08c;
@@ -116,7 +193,14 @@
     top: 0;
     transform: rotate(180deg);
     cursor: crosshair;
-    background-color: rgba(187, 197, 222, 0.1)
+    /*background-color: rgba(187, 197, 222, 0.1);*/
+    transition: all .25s ease;
+  }
+
+  .group-list:hover::after {
+    color: #00f;
+    font-size: 1em;
+    transform: rotate(360deg);
   }
 
   /*.group-list {

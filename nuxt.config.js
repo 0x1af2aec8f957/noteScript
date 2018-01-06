@@ -1,3 +1,7 @@
+function resolve (dir) { // 加载文件
+  return require('path').join(__dirname, '..', dir)
+}
+
 module.exports = {
   /*
    ** Headers of the page
@@ -7,15 +11,15 @@ module.exports = {
     meta: [{
       charset: 'utf-8'
     },
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
-      },
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'https://www.notescript.cc'
-      }
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1'
+    },
+    {
+      hid: 'description',
+      name: 'description',
+      content: 'https://www.notescript.cc'
+    }
     ],
     link: [{
       rel: 'icon',
@@ -51,6 +55,18 @@ module.exports = {
         })
       }
     },
-    vendor: ['em-util', 'axios']
+    vendor: ['em-util', 'axios'],
+    /* babel: {
+      plugins: [['component', [{
+        libraryName: 'qc-ui',
+        styleLibraryName: 'theme-default'
+      }]]]
+    } */
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        include: [resolve('pages'), resolve('components'), resolve('node_modules/em-util') /* 解决压缩代码报错，module导出时遇见ES6 */]
+      }]
   }
 }

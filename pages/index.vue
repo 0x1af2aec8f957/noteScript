@@ -2,7 +2,14 @@
   <div id="main" class="justify-between">
     <div id="content-left">
       <div class="row-2 vh vw">
-        <div class="logo-box">
+        <div class="logo-box align-center"
+             dropEffect="link"
+             v-text="dragText"
+             @dragenter.preventDefault="dragText='···发现目标···'"
+             @dragover.preventDefault="dragText='···接收目标···'"
+             @dragleave.preventDefault="dragText=''"
+             @dragend.preventDefault="dragText=''"
+             @drop.preventDefault="drag">
           <!--LOGO-->
         </div>
         <div class="align-center menu-list">
@@ -23,7 +30,7 @@
           <i class="fa fa-microphone"></i>
         </div>
       </div>
-      <div class="content-footer">
+      <div class="content-footer overflow-y">
         <nuxt-child/>
       </div>
     </div>
@@ -35,6 +42,7 @@
     name: 'main',
     data () {
       return {
+        dragText: '',
         menu: [{ // 菜单列表
           name: '目录', // 左侧名字
           link: '/catalog' // 右侧链接
@@ -50,8 +58,13 @@
         }]
       }
     },
-    mounted () {
-
+    methods: {
+      drag (event) {
+        this.dragText = '···解析目标···'
+        event.preventDefault()
+        console.log(event.dataTransfer.files)
+        this.dragText = ''
+      }
     }
   }
 </script>
@@ -65,12 +78,8 @@
     height: 100% !important;
   }
 
-  #main {
-    background-color: rgba(187, 197, 222, 0.1);
-  }
-
   /*背景主题*/
-  .row-2 > *:first-child[class~="logo-box"], .content-header {
+  #main, .row-2 > *:first-child[class~="logo-box"], .content-header {
     background-color: rgba(36, 173, 255, 1);
     /*color: #fff;*/
   }
@@ -92,6 +101,8 @@
   .logo-box {
     height: 30%;
     position: relative;
+    font-size: .1rem;
+    color: #fff;
   }
 
   .logo-box::after {
@@ -136,7 +147,7 @@
 
   .content-header {
     height: 1em;
-    padding: 0 .25em;
+    padding-right: .25em;
   }
 
   .content-footer {
