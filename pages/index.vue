@@ -31,6 +31,7 @@
         </div>
       </div>
       <div class="content-footer overflow-y">
+        <!--views-->
         <nuxt-child/>
       </div>
     </div>
@@ -57,6 +58,10 @@
           link: '/about'
         }]
       }
+    },
+    created () {
+      const [{$router: go}, {$route: query}] = [this, this]
+      query.name === 'index' && go.push('/catalog')// 重定向到文章列表页
     },
     methods: {
       drag (event) {
