@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="83c74304-a018-436c-bcce-c38b02906587" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/assets/style/main.css" afterPath="$PROJECT_DIR$/assets/style/main.css" />
-      <change beforePath="$PROJECT_DIR$/nuxt.config.js" afterPath="$PROJECT_DIR$/nuxt.config.js" />
-      <change beforePath="$PROJECT_DIR$/pages/index.vue" afterPath="$PROJECT_DIR$/pages/index.vue" />
-      <change beforePath="$PROJECT_DIR$/pages/index/address.vue" afterPath="$PROJECT_DIR$/pages/index/address.vue" />
-      <change beforePath="$PROJECT_DIR$/pages/index/catalog.vue" afterPath="$PROJECT_DIR$/pages/index/catalog.vue" />
-      <change beforePath="$PROJECT_DIR$/pages/index/donate.vue" afterPath="$PROJECT_DIR$/pages/index/donate.vue" />
-      <change beforePath="$PROJECT_DIR$/pages/index/findOne/_id.vue" afterPath="$PROJECT_DIR$/pages/index/findOne/_id.vue" />
-      <change beforePath="$PROJECT_DIR$/pages/test.vue" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -77,8 +69,8 @@
       <file leaf-file-name="nuxt.config.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nuxt.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+            <state relative-caret-position="285">
+              <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -358,7 +350,7 @@
       <workItem from="1515206986054" duration="18668000" />
       <workItem from="1515401034644" duration="6274000" />
       <workItem from="1515409385517" duration="39000" />
-      <workItem from="1515464349868" duration="20500000" />
+      <workItem from="1515464349868" duration="21209000" />
     </task>
     <task id="LOCAL-00001" summary="新增目录布局">
       <created>1515151481552</created>
@@ -388,11 +380,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515470785429</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="edit findOne.id">
+      <created>1515495817154</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1515495817154</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123558000" />
+    <option name="totallyTimeSpent" value="124267000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -789,8 +788,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nuxt.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        <state relative-caret-position="285">
+          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
           <folding />
         </state>
       </provider>
