@@ -64,6 +64,10 @@ html, body {
   }
 }
 
+.__nuxt-error-page .title {
+  font-size: .15rem !important;
+}
+
 .slide-left-enter, .slide-right-leave-active {
   opacity: 0;
   transform: translate(30px, 0);
@@ -78,4 +82,13 @@ html, body {
   height: 100%;
   width: 100%;
   overflow: hidden; /*无需滚动*/
+}
+
+/*markdown 样式*/
+.md-plan > * {
+  font-size: .1rem;
+}
+
+.md-plan > *:not(:first-child):not(:last-child) {
+  margin: .1rem 0;
 }

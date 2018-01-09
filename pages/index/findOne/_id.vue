@@ -1,8 +1,13 @@
 <template>
   <div id="id">
-    <div v-if="id" class="id">
+    <div v-if="title" class="id">
       <div id="header" class="items-center text-overflow" v-text="title"><!--hello title--></div>
-      <div id="content" v-text="content"><!--hello content--></div>
+      <div id="content"
+           class="md-plan"
+           v-html="content">
+        <!--hello content-->
+        <p>Getting data······</p>
+      </div>
     </div>
     <div id="bounce-error" class="flex-column align-center" v-else>
       <div class="align-center bounce animated">
@@ -17,7 +22,7 @@
         </p>
       </div>
       <div class="button-box justify-between">
-        <nuxt-link tag="button" to="/">返回首页</nuxt-link>
+        <nuxt-link tag="button" to="/donate">去催促博主</nuxt-link>
         <button @click.stop="$router.back()">返回上一页</button>
       </div>
     </div>
@@ -29,10 +34,25 @@
     name: 'id',
     data () {
       const {params: query} = this.$route
+      return query.id === 'hello world!' ? {
+        title: query.id,
+        content: `<p>As you can see, I've been working for years.</p>
+                  <p>I call it the starting point,</p>
+                  <p>That means it's hard for me to challenge the things that have nothing to do with it again.</p>
+                  <p>All this can't be done - Ada Augusta.</p>`
+      } : {}
+    },
+    head () {
       return {
-        id: query.id,
-        title: 'hello title',
-        content: 'hello content'
+        title: this.title || 'Ed Me - Personal blog',
+        meta: [
+          {name: 'keywords', content: this.title},
+          {
+            hid: 'description',
+            name: 'description',
+            content: this.content ? this.content.replace(/<[^>]+>/g, '') : '' // 去掉html中所有的标签
+          }
+        ]
       }
     }/* ,
     validate ({params}) {
@@ -103,33 +123,41 @@
 
   #header, #content {
     font-family: Code;
+    position: relative;
   }
 
   #header {
-    height: .3rem;
-    font-size: .2rem;
+    height: .5rem;
+    font-size: .18rem;
     padding: 0 .1rem;
     font-weight: 900;
-    position: relative;
     color: #24adff;
   }
 
   #header::after {
     content: "";
-    height: 1px;
-    background-color: rgba(36, 173, 255, .5);
-    width: 99%;
+    height: 5px;
+    background-color: #24adff;
+    width: 3%;
     position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
-    margin: auto;
   }
 
   #content {
-    min-height: calc(100% - .3rem);
+    min-height: calc(100% - .5rem);
     padding: .1rem;
     font-weight: 500;
+    font-size: .09rem;
+  }
+
+  #content::after {
+    content: "Affirming: all the comments in the article represent the author's personal views and respect the original work. Plagiarism is shameful!";
+    display: block;
     font-size: .08rem;
+    color: #959595;
+    font-weight: 900;
+    margin: .35rem 0;
+    text-indent: .2rem;
   }
 </style>

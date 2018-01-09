@@ -12,12 +12,14 @@
              @drop.preventDefault="drag">
           <!--LOGO-->
         </div>
-        <div class="align-center menu-list">
+        <div class="align-center menu-list relative-box" :copyright="copyright">
           <nuxt-link v-for="x in menu"
                      tag="p"
                      :class="['cursor-pointer', 'text-center', 'no-select', $route.path.includes(x.link)&&'active']"
                      v-text="x.name" :to="x.link"
-                     :key="x.link"><!--目录--></nuxt-link>
+                     :key="x.link">
+            <!--目录-->
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -26,7 +28,7 @@
       <div class="content-header justify-between items-center">
         <div class="web-title no-select">NOTESCRIPT</div>
         <div class="align-center">
-          <input class="search-box" type="text" placeholder="搜索"/>
+          <input class="search-box" type="text" placeholder="搜索/SEARCH"/>
           <i class="fa fa-microphone"></i>
         </div>
       </div>
@@ -43,7 +45,8 @@
     name: 'main',
     data () {
       return {
-        dragText: '',
+        dragText: '', // 拖拽区域状态文字
+        copyright: `©2017-${new Date().getFullYear()} @Ed Me`, // 版权描述文字
         menu: [{ // 菜单列表
           name: '目录', // 左侧名字
           link: '/catalog' // 右侧链接
@@ -61,12 +64,13 @@
     },
     created () {
       const [{$router: go}, {$route: query}] = [this, this]
-      query.name === 'index' && go.push('/catalog')// 重定向到文章列表页
+      query.name === 'index' && go.push('/catalog')// 首页重定向到文章列表页
     },
     methods: {
       drag (event) {
         this.dragText = '···解析目标···'
         event.preventDefault()
+        console.log('成功捕获到一个新文件：')
         console.log(event.dataTransfer.files)
         this.dragText = ''
       }
@@ -130,6 +134,18 @@
 
   .logo-box + * {
     height: 70%;
+  }
+
+  .menu-list[class~="align-center"]::after {
+    content: attr(copyright);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
   }
 
   .menu-list[class~="align-center"] > * {

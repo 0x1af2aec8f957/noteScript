@@ -4,6 +4,7 @@
        v-for="x in group"
        :target="x.tag"
        v-text="x.title"
+       @click.stop="$router.push(`/findOne/${x.title}`)"
        :style="{fontSize:x.random}"></p>
   </div>
 </template>
@@ -15,137 +16,23 @@
       return {
         origin: '------',
         group: [{
-          title: 'import world!',
-          content: `welcome to ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: 'where is ....',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: '测试 测试',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: 'js开发技巧js开发技巧js开发技巧js开发技巧js开发技巧js开发技巧js开发技巧js开发技巧js开发技巧',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: '未来 现在',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: '中国足球',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: '犀利的走位',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: '我们不一样',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: 'Helloween world',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: '西部牛仔',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: '西部牛仔',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: '西部牛仔',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: '西部牛仔',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: '西部牛仔',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: '西部牛仔',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: '西部牛仔',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: '西部牛仔',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: '西部牛仔',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: '西部牛仔',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: '西部牛仔',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
-        }, {
-          title: '西部牛仔',
-          content: `欢迎来到 ${this.origin}`,
-          time: '2018-01-01',
-          tag: 'JAVASCRIPT',
-          random: '0rem'
+          title: 'hello world!',
+          tag: 'PREFACE',
+          random: 0// 初始化字体大小
         }]
+      }
+    },
+    head () {
+      return {
+        // title: this.title,
+        meta: [
+          {name: 'keywords', content: this.group.map(x => x.title).toString()}
+        ]
       }
     },
     mounted () {
       [this.origin] = [window.origin]
-      this.group.forEach(x => (x.random = this.random()[Math.random().toString().split('.')[1].split('')[0] * true] + 'px'))
+      this.group.forEach(x => (x.random = (this.random()[Math.random().toString().split('.')[1].split('')[0] * true] || 15/* 禁止为0 */) + 'px'))
     },
     methods: {
       random (step = 2) { // 随机字体大小
