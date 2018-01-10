@@ -14,7 +14,7 @@ module.exports = {
     },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
+        content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1' // width=device-width, initial-scale=1
       },
       {
         name: 'author',
