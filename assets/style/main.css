@@ -78,7 +78,7 @@ html, body {
   transform: translate(-30px, 0);
 }
 
-#__nuxt, .nuxt-progress + * {
+#__nuxt, .nuxt-progress + *, #__layout, #__layout > * {
   height: 100%;
   width: 100%;
   overflow: hidden; /*无需滚动*/

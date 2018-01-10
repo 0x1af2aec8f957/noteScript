@@ -28,7 +28,7 @@
       <div class="content-header justify-between items-center">
         <div class="web-title no-select">NOTESCRIPT</div>
         <div class="align-center">
-          <input class="search-box" type="text" placeholder="搜索/SEARCH"/>
+          <input class="search-box" type="text" placeholder="SEARCH"/>
           <i class="fa fa-microphone"></i>
         </div>
       </div>

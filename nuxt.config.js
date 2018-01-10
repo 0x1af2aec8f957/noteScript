@@ -6,6 +6,7 @@ module.exports = {
   /*
    ** Headers of the page
    */
+  mode: 'spa', // nuxt start --spa
   head: {
     title: 'Ed Me - Personal blog',
     meta: [{

@@ -55,12 +55,13 @@
   }
 
   .group-list {
+    display: block;
     color: rgba(25, 118, 210, 1);
-    position: relative;
     cursor: pointer;
     font-family: Code;
     padding-right: .888em; /*确保看到after[tag/标签]*/
     margin: .035rem 0;
+    position: relative;
     /*background-color: rgba(187, 197, 222, 0.1);*/
     border-radius: 2px;
     transition: color .25s ease;
