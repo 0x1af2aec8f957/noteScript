@@ -36,10 +36,10 @@
       const {params: query} = this.$route
       return query.id === 'hello world' ? {
         title: query.id,
-        content: `<p>如你所见，我正在为此工作。</p>
-                  <p>当你看到这篇文章时，意味着我们的距离更近了一步。</p>
-                  <p>文末，感谢你抽出时间阅读至此。</p>
-                  <p>当然，所有的这一切都离不开一个人 — 布莱恩·柯林汉 <span class="cursor-crosshair" onclick="window.open('https://web.archive.org/web/20150203071526/http://cm.bell-labs.com/cm/cs/who/dmr/btut.html')">《A Tutorial Introduction to the Language B》</span></p>`
+        content: `<p>As you can see, I'm working on it.</p>
+                  <p>When you see this article, it means that our distance is a step closer.</p>
+                  <p>At the end of the text, thank you for taking time to read this.</p>
+                  <p>Of course, all this can't be done without a person - Brian Wilson Kernighan <span class="cursor-crosshair" onclick="window.open('https://web.archive.org/web/20150203071526/http://cm.bell-labs.com/cm/cs/who/dmr/btut.html')">"A Tutorial Introduction to the Language B"</span>.</p>`
       } : {}
     },
     head () {
