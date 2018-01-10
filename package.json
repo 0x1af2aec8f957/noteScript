@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
-    "em-util": "^1.0.3",
-    "nuxt": "^1.0.0-rc9",
+    "em-util": "^1.0.4",
+    "nuxt": "^1.0.0",
     "qc-ui": "0.0.8"
   },
   "devDependencies": {
