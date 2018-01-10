@@ -34,12 +34,12 @@
     name: 'id',
     data () {
       const {params: query} = this.$route
-      return query.id === 'hello world!' ? {
+      return query.id === 'hello world' ? {
         title: query.id,
-        content: `<p>As you can see, I've been working for years.</p>
-                  <p>I call it the starting point,</p>
-                  <p>That means it's hard for me to challenge the things that have nothing to do with it again.</p>
-                  <p>All this can't be done - Ada Augusta.</p>`
+        content: `<p>如你所见，我正在为此工作。</p>
+                  <p>当你看到这篇文章时，意味着我们的距离更近了一步。</p>
+                  <p>文末，感谢你抽出时间阅读至此。</p>
+                  <p>当然，所有的这一切都离不开一个人 — 布莱恩·柯林汉 <span class="cursor-crosshair" onclick="window.open('https://web.archive.org/web/20150203071526/http://cm.bell-labs.com/cm/cs/who/dmr/btut.html')">《A Tutorial Introduction to the Language B》</span></p>`
       } : {}
     },
     head () {

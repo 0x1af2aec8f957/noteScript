@@ -16,7 +16,7 @@
       return {
         origin: '------',
         group: [{
-          title: 'hello world!',
+          title: 'hello world',
           tag: 'PREFACE',
           random: 0// 初始化字体大小
         }]
