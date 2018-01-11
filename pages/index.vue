@@ -26,8 +26,8 @@
     <div id="content-right">
       <!--this's content-->
       <div class="content-header justify-between items-center">
-        <div class="web-title no-select">NOTESCRIPT</div>
-        <div class="align-center">
+        <div class="web-title align-center no-select">NOTESCRIPT</div>
+        <div class="align-center search-plan">
           <input class="search-box" type="text" placeholder="SEARCH"/>
           <i class="fa fa-microphone"></i>
         </div>
@@ -79,6 +79,13 @@
 </script>
 
 <style scoped>
+  @media screen and (max-width: 520px) {
+    /*隐藏搜索框*/
+    .search-plan {
+      display: none;
+    }
+  }
+
   input, i {
     box-sizing: border-box !important;
   }

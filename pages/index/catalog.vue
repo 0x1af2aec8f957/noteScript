@@ -32,14 +32,14 @@
     },
     mounted () {
       [this.origin] = [window.origin]
-      this.group.forEach(x => (x.random = (this.random()[Math.random().toString().split('.')[1].split('')[0] * true] || 15/* 禁止为0 */) + 'px'))
+      this.group.forEach(x => (x.random = (this.random()[Math.random().toString().split('.')[1].split('')[0] * true] || 0.1/* 禁止为0 */) + 'rem'))
     },
     methods: {
-      random (step = 2) { // 随机字体大小
+      random (step = 0.02) { // 随机字体大小
         /* eslint one-var: ["error", "always"] */
         /* eslint camelcase: "error" */
         /* eslint-env es6 */
-        let [MIN, MAX] = [15, 30], fontArr = [MIN]// 字体大小设置[最小,最大]
+        let [MIN, MAX] = [0.1, 0.25], fontArr = [MIN]// 字体大小设置[最小,最大]
         while (MIN <= MAX) fontArr.push(MIN += step)
         return fontArr
       }
