@@ -15,7 +15,7 @@
         <div class="align-center menu-list relative-box" :copyright="copyright">
           <nuxt-link v-for="x in menu"
                      tag="p"
-                     :class="['cursor-pointer', 'text-center', 'no-select', $route.path.includes(x.link)&&'active']"
+                     :class="['cursor-pointer', 'text-center', 'no-select', $route.path===x.link&&'active']"
                      v-text="x.name" :to="x.link"
                      :key="x.link">
             <!--目录-->
@@ -49,7 +49,7 @@
         copyright: `©2017-${new Date().getFullYear()} @Ed Me`, // 版权描述文字
         menu: [{ // 菜单列表
           name: '目录', // 左侧名字
-          link: '/catalog' // 右侧链接
+          link: '/' // 右侧链接
         }, {
           name: '地址',
           link: '/address'
@@ -62,10 +62,10 @@
         }]
       }
     },
-    created () {
+    /* created () {
       const [{$router: go}, {$route: query}] = [this, this]
       query.name === 'index' && go.push('/catalog')// 首页重定向到文章列表页
-    },
+    }, */
     methods: {
       drag (event) {
         this.dragText = '···解析目标···'
